@@ -10,6 +10,13 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@angular-architects/ddd@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@angular-architects/ddd/-/ddd-3.0.0.tgz#91efcabc4ac076609ee4d06cc6f6cbe237536ed1"
+  integrity sha512-aLfd0DUXbjDxSlV8R7sbtPotoYViu9nQJUwj7Vfk/erAu5QNTXFsGTEW5BKYb57JtrvEvCGYyyCidRUr1F8z6A==
+  dependencies:
+    "@ngrx/schematics" "^13.0.0"
+
 "@angular-architects/module-federation-runtime@15.0.2":
   version "15.0.2"
   resolved "https://registry.yarnpkg.com/@angular-architects/module-federation-runtime/-/module-federation-runtime-15.0.2.tgz#146cb12075a1559a5f1a35d6a75a3ff4205362f8"
@@ -1712,6 +1719,11 @@
   integrity sha512-WBgT2uI/CejfYfdi3cjDsp9Q5UZTFnTcTGMTDFT8HujrCD75PxVw8ad9k2GMqp7j96qE13xi+8VRknQyUPx3HA==
   dependencies:
     tslib "^2.0.0"
+
+"@ngrx/schematics@^13.0.0":
+  version "13.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-13.2.0.tgz#c2edba689b8e134877cb1db2f8bde974ea095c8c"
+  integrity sha512-MpSJFWF+Pppwv2C+0NNw8RPZmgbhaiEMCiF8VUkAJkXki9CV9Da6cTOa+v1nIrrfUpm/L+jD8DL9CPJTPccRZg==
 
 "@ngrx/store-devtools@^15.0.0":
   version "15.0.0"
