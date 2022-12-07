@@ -5,9 +5,11 @@ const {
 
 module.exports = withModuleFederationPlugin({
   name: 'assets',
+
   exposes: {
     './routes': './apps/assets/src/app/assets.routes.ts',
   },
+
   shared: {
     ...shareAll({
       singleton: true,

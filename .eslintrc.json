@@ -1,20 +1,10 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@nrwl/nx",
-    "import"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "import"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
@@ -50,22 +40,19 @@
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": [
-                  "type:domain-logic",
-                  "type:util"
-                ]
+                "onlyDependOnLibsWithTags": ["type:domain-logic", "type:util"]
               },
               {
                 "sourceTag": "type:domain-logic",
-                "onlyDependOnLibsWithTags": [
-                  "type:util"
-                ]
+                "onlyDependOnLibsWithTags": ["type:util"]
               },
               {
                 "sourceTag": "domain:shared",
-                "onlyDependOnLibsWithTags": [
-                  "domain:shared"
-                ]
+                "onlyDependOnLibsWithTags": ["domain:shared"]
+              },
+              {
+                "sourceTag": "domain:auth",
+                "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared"]
               }
             ]
           }
@@ -73,13 +60,7 @@
         "import/order": [
           "error",
           {
-            "groups": [
-              "builtin",
-              "external",
-              "parent",
-              "sibling",
-              "index"
-            ],
+            "groups": ["builtin", "external", "parent", "sibling", "index"],
             "pathGroups": [
               {
                 "pattern": "@shell/**",
@@ -87,9 +68,7 @@
                 "position": "after"
               }
             ],
-            "pathGroupsExcludedImportTypes": [
-              "builtin"
-            ],
+            "pathGroupsExcludedImportTypes": ["builtin"],
             "alphabetize": {
               "order": "asc"
             },
@@ -106,32 +85,17 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {}
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
     },
     {
-      "files": [
-        "*.spec.ts",
-        "*.spec.tsx",
-        "*.spec.js",
-        "*.spec.jsx"
-      ],
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
       "env": {
         "jest": true
       },
