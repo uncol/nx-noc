@@ -1,0 +1,23 @@
+version: '3'
+services:
+  #  web:
+  #    image: nginx:alpine
+  #    ports:
+  #      - "443:443"
+  #    volumes:
+  #      - ./files:/etc/nginx/conf.d
+  #      - ../dist/shell:/usr/share/nginx/html
+  #      - ../dist/alarms:/usr/share/nginx/html/feature/alarms
+  #      - ./files/cert:/root/ssl
+  api:
+    image: node:16-alpine
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../dist/apps/fake-api/:/app
+      - ./files/fake-api/.env:/app/.env
+      - ./files/fake-api/package.json:/app/package.json
+    working_dir: /app
+    command: /bin/sh -c "npm i && node ./main.js"
+  redis:
+    image: redis:7-alpine

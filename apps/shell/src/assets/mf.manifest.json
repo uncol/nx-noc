@@ -1,9 +1,9 @@
 {
-	"assets": {
-      "displayName": "Assets",
-      "routePath": "assets",
-      "iconName": "noc-assets",
-      "exposedModule": "./routes",
-      "remoteEntry": "http://localhost:4201/remoteEntry.js"
-    }
+  "assets": {
+    "displayName": "Assets",
+    "routePath": "assets",
+    "iconName": "noc-assets",
+    "exposedModule": "./routes",
+    "remoteEntry": "http://localhost:4201/remoteEntry.js"
+  }
 }
