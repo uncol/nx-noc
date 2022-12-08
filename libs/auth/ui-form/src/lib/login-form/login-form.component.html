@@ -1,0 +1,37 @@
+<!--<form [formGroup]="form" (ngSubmit)="submit()">-->
+<!--  <input type="email" *ngIf='!loggedIn' placeholder="Email" formControlName="email" />-->
+<!--  <input type="password" *ngIf='!loggedIn' placeholder="Password" formControlName="password" />-->
+<!--  <input type="button" *ngIf='!loggedIn' value="Reset" (click)="reset()" />-->
+<!--  <input type="button" *ngIf='loggedIn' value="Logout" (click)="logoutConfirmation.showModal()" />-->
+<!--  <input type="submit" *ngIf='!loggedIn' value="Log in" />-->
+<!--</form>-->
+<!--<div *ngIf='errorMessage'>{{ errorMessage.message }}</div>-->
+<!--<dialog id="logout-confirmation" #logoutConfirmation>-->
+<!--  <p>Do you want logout?</p>-->
+<!--  <button id="cancel-logout" (click)='logoutConfirmation.close()'>Cancel</button>-->
+<!--  <button id="confirm-logout" (click)="logOut()">Logout</button>-->
+<!--</dialog>-->
+
+<div class="login-wrapper" *ngIf='!loggedIn'>
+  <form class="login" [formGroup]="form" (ngSubmit)="submit()">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      Company Product Name
+      <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+    </section>
+    <div class="login-group">
+      <clr-input-container>
+        <label class="clr-sr-only">Username</label>
+        <input type="text" name="username" clrInput placeholder="Username" formControlName="username"/>
+      </clr-input-container>
+      <clr-password-container>
+        <label class="clr-sr-only">Password</label>
+        <input type="password" name="password" clrPassword placeholder="Password" formControlName="password"/>
+      </clr-password-container>
+      <div class="error active" *ngIf='errorMessage'>
+        {{ errorMessage.message }}
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  </form>
+</div>

@@ -1,1 +1,1 @@
-export * from './lib/form/form.component';
+export * from './lib/login-form/login-form.component';

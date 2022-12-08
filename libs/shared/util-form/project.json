@@ -1,15 +1,15 @@
 {
-  "name": "auth-ui-form",
+  "name": "shared-util-form",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/auth/ui-form/src",
-  "prefix": "login-form",
+  "sourceRoot": "libs/shared/util-form/src",
+  "prefix": "form",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/auth/ui-form/jest.config.ts",
+        "jestConfig": "libs/shared/util-form/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,11 +17,11 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/auth/ui-form/**/*.ts",
-          "libs/auth/ui-form/**/*.html"
+          "libs/shared/util-form/**/*.ts",
+          "libs/shared/util-form/**/*.html"
         ]
       }
     }
   },
-  "tags": ["domain:auth", "type:ui"]
+  "tags": ["domain:shared", "type:util"]
 }

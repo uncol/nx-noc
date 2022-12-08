@@ -16,7 +16,7 @@
         "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-        "styles": ["apps/shell/src/styles.scss"],
+        "styles": ["node_modules/@clr/ui/clr-ui.min.css","apps/shell/src/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/shell/webpack.config.js"

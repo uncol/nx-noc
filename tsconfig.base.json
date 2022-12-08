@@ -17,7 +17,9 @@
     "paths": {
       "@auth-domain": ["libs/auth/domain/src/index.ts"],
       "@auth-feature-login": ["libs/auth/feature-login/src/index.ts"],
-      "@auth-login-form": ["libs/auth/ui-form/src/index.ts"]
+      "@auth-login-form": ["libs/auth/ui-form/src/index.ts"],
+      "@error-util": ["libs/shared/util-error/src/index.ts"],
+      "@form-util": ["libs/shared/util-form/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
