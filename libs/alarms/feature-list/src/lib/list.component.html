@@ -1,0 +1,9 @@
+<h1>alarms-list</h1>
+
+<table class="table">
+  <tr *ngFor="let alarm of alarmList$ | async">
+    <td>{{ alarm.id }}</td>
+    <td>{{ alarm.name }}</td>
+    <td>{{ alarm.description }}</td>
+  </tr>
+</table>

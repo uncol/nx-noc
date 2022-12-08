@@ -53,6 +53,10 @@
               {
                 "sourceTag": "domain:auth",
                 "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:alarms",
+                "onlyDependOnLibsWithTags": ["domain:alarms", "domain:shared"]
               }
             ]
           }

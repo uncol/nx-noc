@@ -12,7 +12,7 @@
 <!--  <button id="confirm-logout" (click)="logOut()">Logout</button>-->
 <!--</dialog>-->
 
-<div class="login-wrapper" *ngIf='!loggedIn'>
+<div class="login-wrapper" *ngIf="!loggedIn">
   <form class="login" [formGroup]="form" (ngSubmit)="submit()">
     <section class="title">
       <h3 class="welcome">Welcome to</h3>
@@ -22,13 +22,25 @@
     <div class="login-group">
       <clr-input-container>
         <label class="clr-sr-only">Username</label>
-        <input type="text" name="username" clrInput placeholder="Username" formControlName="username"/>
+        <input
+          type="text"
+          name="username"
+          clrInput
+          placeholder="Username"
+          formControlName="username"
+        />
       </clr-input-container>
       <clr-password-container>
         <label class="clr-sr-only">Password</label>
-        <input type="password" name="password" clrPassword placeholder="Password" formControlName="password"/>
+        <input
+          type="password"
+          name="password"
+          clrPassword
+          placeholder="Password"
+          formControlName="password"
+        />
       </clr-password-container>
-      <div class="error active" *ngIf='errorMessage'>
+      <div class="error active" *ngIf="errorMessage">
         {{ errorMessage.message }}
       </div>
       <button type="submit" class="btn btn-primary">Login</button>

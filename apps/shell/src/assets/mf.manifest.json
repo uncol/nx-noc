@@ -5,5 +5,12 @@
     "iconName": "noc-assets",
     "exposedModule": "./routes",
     "remoteEntry": "http://localhost:4201/remoteEntry.js"
+  },
+  "alarms": {
+    "displayName": "Alarms",
+    "routePath": "alarms",
+    "iconName": "noc-assets",
+    "exposedModule": "./routes",
+    "remoteEntry": "http://localhost:4202/remoteEntry.js"
   }
 }

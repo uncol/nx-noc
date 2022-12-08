@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@alarm-list": ["libs/alarms/feature-list/src/index.ts"],
+      "@alarms-domain": ["libs/alarms/domain/src/index.ts"],
       "@auth-domain": ["libs/auth/domain/src/index.ts"],
       "@auth-feature-login": ["libs/auth/feature-login/src/index.ts"],
       "@auth-login-form": ["libs/auth/ui-form/src/index.ts"],
