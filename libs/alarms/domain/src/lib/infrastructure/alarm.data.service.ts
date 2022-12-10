@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { Alarm } from '../entities/alarm';
+import { Alarm } from '../entities';
 
 @Injectable({ providedIn: 'root' })
 export class AlarmDataService {

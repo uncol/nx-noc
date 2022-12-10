@@ -51,12 +51,20 @@
                 "onlyDependOnLibsWithTags": ["domain:shared"]
               },
               {
+                "sourceTag": "domain:shell",
+                "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared", "domain:shell"]
+              },
+              {
                 "sourceTag": "domain:auth",
                 "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared"]
               },
               {
                 "sourceTag": "domain:alarms",
-                "onlyDependOnLibsWithTags": ["domain:alarms", "domain:shared"]
+                "onlyDependOnLibsWithTags": ["domain:alarms", "domain:auth", "domain:shared"]
+              },
+              {
+                "sourceTag": "domain:assests",
+                "onlyDependOnLibsWithTags": ["domain:assets", "domain:auth", "domain:shared"]
               }
             ]
           }

@@ -1,2 +1,7 @@
-<h1>auth-login</h1>
-<login-form></login-form>
+<login-form
+ [pending]="(pending$ | async)!"
+ [errorMessage]="(pageError$ | async)!"
+ [loggedIn]="(loggedIn$ | async)!"
+ (submitted)="onSubmit($event)"
+ (logout)="onLogout()">
+</login-form>

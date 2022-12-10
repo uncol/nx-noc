@@ -7,7 +7,7 @@ module.exports = withModuleFederationPlugin({
   name: 'assets',
 
   exposes: {
-    './routes': './apps/assets/src/app/assets.routes.ts',
+    './routes': './apps/assets/src/app/routes.ts',
   },
 
   shared: {

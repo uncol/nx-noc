@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "nxNoc",
+            "prefix": "alarms",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "nx-noc",
+            "prefix": "alarms",
             "style": "kebab-case"
           }
         ]

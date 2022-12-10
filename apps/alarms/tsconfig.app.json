@@ -5,6 +5,6 @@
     "types": []
   },
   "files": ["src/main.ts"],
-  "include": ["src/app/alarms.routes.ts", "src/**/*.d.ts"],
+  "include": ["src/app/routes.ts", "src/**/*.d.ts"],
   "exclude": ["jest.config.ts", "**/*.test.ts", "**/*.spec.ts"]
 }

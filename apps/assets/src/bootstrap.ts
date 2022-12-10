@@ -5,7 +5,7 @@ import {
 } from '@angular/router';
 
 import { AppComponent } from './app/app.component';
-import ROUTES from './app/assets.routes';
+import ROUTES from './app/routes';
 
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(ROUTES, withEnabledBlockingInitialNavigation())],

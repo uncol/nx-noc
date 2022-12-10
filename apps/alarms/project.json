@@ -7,16 +7,26 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/alarms",
         "index": "apps/alarms/src/index.html",
         "main": "apps/alarms/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/alarms/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/alarms/src/favicon.ico", "apps/alarms/src/assets"],
-        "styles": ["apps/alarms/src/styles.scss"],
+        "assets": [
+          "apps/alarms/src/favicon.ico",
+          "apps/alarms/src/assets"
+        ],
+        "styles": [
+          "node_modules/@clr/ui/clr-ui.min.css",
+          "apps/alarms/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/alarms/webpack.config.js"
@@ -79,17 +89,25 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/alarms/**/*.ts", "apps/alarms/**/*.html"]
+        "lintFilePatterns": [
+          "apps/alarms/**/*.ts",
+          "apps/alarms/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/alarms/jest.config.ts",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["domain:alarms", "type:app"]
+  "tags": [
+    "domain:alarms",
+    "type:app"
+  ]
 }

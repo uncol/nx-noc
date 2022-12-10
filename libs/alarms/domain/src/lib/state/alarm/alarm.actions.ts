@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Alarm } from '../../entities/alarm';
+import { Alarm } from '../../entities';
 
 export const loadAlarm = createAction('[Alarm] Load Alarm');
 

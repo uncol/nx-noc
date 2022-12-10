@@ -12,7 +12,7 @@ export const SHELL_ROUTES: Route[] = [
   },
   {
     path: 'login',
-    title: 'Shell - Login',
+    title: 'Auth - Login',
     providers: [provideAuthDomain()],
     component: LoginPageComponent,
   },

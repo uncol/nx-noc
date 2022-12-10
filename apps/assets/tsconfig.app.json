@@ -4,7 +4,9 @@
     "outDir": "../../dist/out-tsc",
     "types": []
   },
-  "files": ["src/main.ts", "src/app/assets.routes.ts"],
+  "files": ["src/main.ts",
+    "src/app/routes.ts"
+  ],
   "include": ["src/**/*.d.ts"],
   "exclude": ["jest.config.ts", "**/*.test.ts", "**/*.spec.ts"]
 }

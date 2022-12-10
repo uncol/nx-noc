@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 
 // import { CanActivateGuard } from './guards/can-activate.guard';
 import { NOCManifest } from './model';
-import { SHELL_ROUTES } from './shell.routes';
+import { SHELL_ROUTES } from './routes';
 
 export function buildRoutes(options: NOCManifest): Routes {
   const lazyRoutes: Routes = Object.keys(options).map((key) => {

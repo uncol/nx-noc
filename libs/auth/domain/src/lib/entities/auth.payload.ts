@@ -6,6 +6,8 @@ export interface AuthPayload extends Credentials {
   visitorId: string;
 }
 
+export const EMPTY_TOKEN = 'none';
+
 export type TokenTypes = 'bearer';
 
 export interface Tokens {

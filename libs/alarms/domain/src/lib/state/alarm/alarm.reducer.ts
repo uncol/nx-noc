@@ -1,7 +1,7 @@
 import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
 import { Action, createReducer, on } from '@ngrx/store';
 
-import { Alarm } from '../../entities/alarm';
+import { Alarm } from '../../entities';
 
 import * as AlarmActions from './alarm.actions';
 

@@ -14,7 +14,7 @@ import { AppActions } from './app/actions';
 import { AppComponent } from './app/app.component';
 import { AppEffects } from './app/effects/app.effects';
 import { ROOT_REDUCERS } from './app/reducers';
-import { SHELL_ROUTES } from './app/shell.routes';
+import { SHELL_ROUTES } from './app/routes';
 
 export function runInitEffect(fn: (store: Store) => void): Provider {
   return {
@@ -32,6 +32,7 @@ export const MANIFEST_INIT = runInitEffect((store: Store) => {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: 'DATA_API', useValue: ['/api/data'] },
+    { provide: 'AUTH_API', useValue: '/api/login' },
     importProvidersFrom([BrowserModule, BrowserAnimationsModule]),
     MANIFEST_INIT,
     provideHttpClient(),
@@ -47,6 +48,7 @@ bootstrapApplication(AppComponent, {
         strictActionTypeUniqueness: true,
       },
     }),
+    // provideState(authFeature),
     provideEffects([AppEffects]),
     provideStoreDevtools({
       maxAge: 25,

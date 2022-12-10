@@ -7,7 +7,7 @@ module.exports = withModuleFederationPlugin({
   name: 'alarms',
 
   exposes: {
-    './routes': './apps/alarms/src/app/alarms.routes.ts',
+    './routes': './apps/alarms/src/app/routes.ts',
   },
 
   shared: {

@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
-  selector: 'nx-noc-root',
+  imports: [RouterModule],
+  selector: 'alarms-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
