@@ -24,5 +24,6 @@ export const AuthActions = createActionGroup({
     'Logout Failure': props<{ error: HTTPError }>(),
     Login: props<{ credentials: Credentials }>(),
     Logout: emptyProps(),
+    'Idle Timeout': emptyProps(),
   },
 });

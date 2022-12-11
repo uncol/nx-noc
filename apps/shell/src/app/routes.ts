@@ -1,5 +1,4 @@
 import { Route } from '@angular/router';
-import { provideAuthDomain } from '@auth-domain';
 import { LoginPageComponent } from '@auth-feature-login';
 
 import { HomeComponent } from './home/home.component';
@@ -13,7 +12,6 @@ export const SHELL_ROUTES: Route[] = [
   {
     path: 'login',
     title: 'Auth - Login',
-    providers: [provideAuthDomain()],
     component: LoginPageComponent,
   },
 ];

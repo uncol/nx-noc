@@ -6,6 +6,7 @@ import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
+import { provideAuthDomain } from '@auth-domain';
 import { provideEffects } from '@ngrx/effects';
 import { Store, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
@@ -54,5 +55,6 @@ bootstrapApplication(AppComponent, {
       maxAge: 25,
       name: 'NOC Store App',
     }),
+    provideAuthDomain(),
   ],
 }).catch((err) => console.error(err));

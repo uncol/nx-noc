@@ -1,0 +1,12 @@
+{
+  "/api/login/**": {
+    "logLevel": "debug",
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/data/**": {
+    "logLevel": "debug",
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}

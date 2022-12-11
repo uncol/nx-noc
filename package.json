@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start:shell": "nx serve shell --proxy-config=apps/shell/proxy-local.conf.json",
+    "start:alarms": "nx serve alarms --proxy-config=apps/shell/proxy-local.conf.json",
     "build": "nx build",
     "test": "nx test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",

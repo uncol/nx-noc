@@ -7,7 +7,6 @@ import {
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
 import { LoginPageComponent } from '@auth-feature-login';
-import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app/app.component';
@@ -30,8 +29,7 @@ bootstrapApplication(AppComponent, {
       withEnabledBlockingInitialNavigation()
     ),
     provideAlarmsRootStore(),
-    provideAuthDomain(),
-    provideEffects([]),
     provideStoreDevtools(),
+    provideAuthDomain(),
   ],
 }).catch((err) => console.error(err));
