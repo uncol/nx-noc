@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
 import { LoginPageComponent } from '@auth-feature-login';
+import { endpoints } from '@global-variable';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app/app.component';
@@ -14,7 +15,7 @@ import ALARMS_ROUTES from './app/routes';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: 'AUTH_API', useValue: '/api/login' },
+    endpoints,
     provideHttpClient(),
     provideRouter(
       [

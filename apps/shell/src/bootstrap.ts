@@ -1,5 +1,5 @@
 import { provideHttpClient } from '@angular/common/http';
-import { APP_INITIALIZER, Provider, importProvidersFrom } from '@angular/core';
+import { importProvidersFrom } from '@angular/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -7,6 +7,7 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
+import { endpoints, runInitEffect } from '@global-variable';
 import { provideEffects } from '@ngrx/effects';
 import { Store, provideStore } from '@ngrx/store';
 
@@ -17,14 +18,6 @@ import { AppEffects } from './app/effects/app.effects';
 import { ROOT_REDUCERS } from './app/reducers';
 import { SHELL_ROUTES } from './app/routes';
 
-export function runInitEffect(fn: (store: Store) => void): Provider {
-  return {
-    multi: true,
-    provide: APP_INITIALIZER,
-    useFactory: fn,
-    deps: [Store],
-  };
-}
 export const MANIFEST_INIT = runInitEffect((store: Store) => {
   return () => {
     store.dispatch(AppActions.loadManifest());
@@ -32,9 +25,8 @@ export const MANIFEST_INIT = runInitEffect((store: Store) => {
 });
 bootstrapApplication(AppComponent, {
   providers: [
-    { provide: 'DATA_API', useValue: ['/api/data'] },
-    { provide: 'AUTH_API', useValue: '/api/login' },
     importProvidersFrom([BrowserModule, BrowserAnimationsModule]),
+    endpoints,
     MANIFEST_INIT,
     provideHttpClient(),
     provideRouter(SHELL_ROUTES, withEnabledBlockingInitialNavigation()),
