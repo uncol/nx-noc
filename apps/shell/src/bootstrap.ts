@@ -9,10 +9,10 @@ import {
 import { provideAuthDomain } from '@auth-domain';
 import { provideEffects } from '@ngrx/effects';
 import { Store, provideStore } from '@ngrx/store';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { AppActions } from './app/actions';
 import { AppComponent } from './app/app.component';
+import { extModules, metaReducers } from './app/build-specifics';
 import { AppEffects } from './app/effects/app.effects';
 import { ROOT_REDUCERS } from './app/reducers';
 import { SHELL_ROUTES } from './app/routes';
@@ -39,7 +39,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(),
     provideRouter(SHELL_ROUTES, withEnabledBlockingInitialNavigation()),
     provideStore(ROOT_REDUCERS, {
-      metaReducers: [],
+      metaReducers: metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
@@ -51,10 +51,7 @@ bootstrapApplication(AppComponent, {
     }),
     // provideState(authFeature),
     provideEffects([AppEffects]),
-    provideStoreDevtools({
-      maxAge: 25,
-      name: 'NOC Store App',
-    }),
     provideAuthDomain(),
+    extModules,
   ],
 }).catch((err) => console.error(err));

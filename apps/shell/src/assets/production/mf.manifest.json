@@ -1,0 +1,16 @@
+{
+  "assets": {
+    "displayName": "Assets",
+    "routePath": "assets",
+    "iconName": "noc-assets",
+    "exposedModule": "./routes",
+    "remoteEntry": "/feature/assets/remoteEntry.js"
+  },
+  "alarms": {
+    "displayName": "Alarms",
+    "routePath": "alarms",
+    "iconName": "noc-assets",
+    "exposedModule": "./routes",
+    "remoteEntry": "/feature/alarms/remoteEntry.js"
+  }
+}

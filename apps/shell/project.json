@@ -50,7 +50,20 @@
           "outputHashing": "all",
           "customWebpackConfig": {
             "path": "apps/shell/webpack.prod.config.js"
-          }
+          },
+          "fileReplacements": [
+            {
+              "replace": "apps/shell/src/app/build-specifics/index.ts",
+              "with": "apps/shell/src/app/build-specifics/index.prod.ts"
+            }
+          ],
+          "assets": [
+            {
+              "input": "apps/shell/src/assets/production",
+              "output": "assets/",
+              "glob": "mf.manifest.json"
+            }
+          ]
         },
         "development": {
           "buildOptimizer": false,
