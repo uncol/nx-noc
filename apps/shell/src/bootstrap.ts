@@ -1,4 +1,3 @@
-import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,9 +25,9 @@ export const MANIFEST_INIT = runInitEffect((store: Store) => {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom([BrowserModule, BrowserAnimationsModule]),
+    provideAuthDomain(),
     endpoints,
     MANIFEST_INIT,
-    provideHttpClient(),
     provideRouter(SHELL_ROUTES, withEnabledBlockingInitialNavigation()),
     provideStore(ROOT_REDUCERS, {
       metaReducers: metaReducers,
@@ -41,9 +40,7 @@ bootstrapApplication(AppComponent, {
         strictActionTypeUniqueness: true,
       },
     }),
-    // provideState(authFeature),
     provideEffects([AppEffects]),
-    provideAuthDomain(),
     extModules,
   ],
 }).catch((err) => console.error(err));

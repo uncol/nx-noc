@@ -1,8 +1,9 @@
+import { endpoints } from '@global-variable';
 import { provideEffects } from '@ngrx/effects';
 import { provideState, provideStore } from '@ngrx/store';
 
-import { AlarmEffects } from './state/alarm/alarm.effects';
-import { ALARM_FEATURE_KEY, reducer } from './state/alarm/alarm.reducer';
+import { AlarmEffects } from './state/alarm.effects';
+import { ALARM_FEATURE_KEY, reducer } from './state/alarm.reducer';
 
 export function provideAlarmsDomain() {
   return [
@@ -15,5 +16,6 @@ export function provideAlarmsRootStore() {
   return [
     provideStore({ [ALARM_FEATURE_KEY]: reducer }),
     provideEffects([AlarmEffects]),
+    endpoints,
   ];
 }

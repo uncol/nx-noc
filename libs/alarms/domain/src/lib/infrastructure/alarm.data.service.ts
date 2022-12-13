@@ -1,34 +1,50 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpResponse,
+} from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
+import { DATA_API } from '@global-variable';
+import { parseResponse } from '@util-data';
+import { Observable, retry, tap, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 import { Alarm } from '../entities';
 
 @Injectable({ providedIn: 'root' })
 export class AlarmDataService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    @Inject(DATA_API) private endpoints: string[]
+  ) {}
 
-  load(): Observable<Alarm[]> {
-    // Uncomment if needed
-    /*
-        const url = '...';
-        const params = new HttpParams().set('param', 'value');
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-        return this.http.get<Alarm[]>(url, {params, headers});
-        */
+  getAll(): Observable<Alarm[]> {
+    return this.http
+      .get<Alarm[]>(`${this.endpoints[0]}/alarms?_limit=20`, {
+        observe: 'response',
+      })
+      .pipe(
+        tap((response: HttpResponse<Alarm[]>) =>
+          console.log(response.headers.get('x-total-count'))
+        ),
+        map((response: HttpResponse<Alarm[]>) => response.body || []),
+        catchError(this.handleError)
+      );
+  }
 
-    return of([
-      { id: 1, name: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet' },
-      {
-        id: 2,
-        name: 'At vero eos',
-        description: 'At vero eos et accusam et justo duo dolores',
-      },
-      {
-        id: 3,
-        name: 'Duis autem',
-        description: 'Duis autem vel eum iriure dolor in hendrerit',
-      },
-    ]);
+  getById(id: string): Observable<Alarm> {
+    return this.http
+      .get<Alarm>(`${this.endpoints[0]}/alarms/${id}`)
+      .pipe(parseResponse({}), retry(2), catchError(this.handleError));
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    const message = error?.error?.message ?? error.message;
+    return throwError(() => ({
+      message,
+      status: error.status,
+      statusText: error.statusText,
+      url: error.url,
+    }));
   }
 }

@@ -16,7 +16,7 @@ const { selectAll, selectEntities } = alarmAdapter.getSelectors();
 
 export const getAlarmLoaded = createSelector(
   getAlarmState,
-  (state: State) => state.loaded
+  (state: State) => state.isLoading
 );
 
 export const getAlarmError = createSelector(

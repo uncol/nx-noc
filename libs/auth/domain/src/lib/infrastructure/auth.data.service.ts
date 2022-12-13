@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { AUTH_API } from '@global-variable';
 import { Observable, catchError, throwError } from 'rxjs';
 
 import { Credentials, Tokens } from '../entities';
@@ -8,7 +9,7 @@ import { Credentials, Tokens } from '../entities';
 export class AuthDataService {
   constructor(
     private http: HttpClient,
-    @Inject('AUTH_API') private authBaseUrl: string
+    @Inject(AUTH_API) private authBaseUrl: string
   ) {}
 
   login(credentials: Credentials, visitorId: string): Observable<Tokens> {

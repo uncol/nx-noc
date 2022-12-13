@@ -5,8 +5,13 @@ import { Route } from '@angular/router';
 export default [
   {
     path: '',
-    title: 'Alarms - Home',
-    component: ListComponent,
     providers: [provideAlarmsDomain()],
+    children: [
+      {
+        path: '',
+        title: 'Alarms - Home',
+        component: ListComponent,
+      },
+    ],
   },
 ] as Route[];

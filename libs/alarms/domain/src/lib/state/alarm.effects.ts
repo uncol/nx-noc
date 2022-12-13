@@ -3,19 +3,19 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
-import { AlarmDataService } from '../../infrastructure/alarm.data.service';
+import { AlarmDataService } from '../infrastructure';
 
-import * as AlarmActions from './alarm.actions';
+import { AlarmsActions } from './alarm.actions';
 
 @Injectable()
 export class AlarmEffects {
   loadAlarm$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(AlarmActions.loadAlarm),
-      switchMap((action) =>
-        this.alarmDataService.load().pipe(
-          map((alarm) => AlarmActions.loadAlarmSuccess({ alarm })),
-          catchError((error) => of(AlarmActions.loadAlarmFailure({ error })))
+      ofType(AlarmsActions.startLoadList),
+      switchMap(() =>
+        this.alarmDataService.getAll().pipe(
+          map((alarms) => AlarmsActions.listLoadedSuccessfully({ alarms })),
+          catchError((error) => of(AlarmsActions.listFailedToLoad({ error })))
         )
       )
     )

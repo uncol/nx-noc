@@ -154,6 +154,16 @@ export class AuthEffects implements OnInitEffects {
     );
   });
 
+  // noinspection JSUnusedGlobalSymbols
+  restoreToken$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthActions.generateVisitorIdSuccess),
+      map((action) => {
+        return AuthActions.refreshToken({ visitorId: action.visitorId });
+      })
+    );
+  });
+
   ngrxOnInitEffects(): Action {
     return AuthActions.generateVisitorId();
   }

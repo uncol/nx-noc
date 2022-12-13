@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import { loadAlarm } from '../state/alarm/alarm.actions';
-import * as fromAlarm from '../state/alarm/alarm.reducer';
-import * as AlarmSelectors from '../state/alarm/alarm.selectors';
+import { AlarmsActions } from '../state/alarm.actions';
+import * as fromAlarm from '../state/alarm.reducer';
+import * as AlarmSelectors from '../state/alarm.selectors';
 
 @Injectable({ providedIn: 'root' })
 export class ListFacade {
@@ -14,6 +14,6 @@ export class ListFacade {
   constructor(private store: Store<fromAlarm.AlarmPartialState>) {}
 
   load(): void {
-    this.store.dispatch(loadAlarm());
+    this.store.dispatch(AlarmsActions.startLoadList());
   }
 }

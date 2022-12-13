@@ -11,4 +11,6 @@ module.exports = withModuleFederationPlugin({
       requiredVersion: 'auto',
     }),
   },
+
+  sharedMappings: ['@global-variable'],
 });
