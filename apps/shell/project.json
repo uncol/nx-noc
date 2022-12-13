@@ -63,7 +63,8 @@
               "output": "assets/",
               "glob": "mf.manifest.json"
             }
-          ]
+          ],
+          "baseHref": "/ui"
         },
         "development": {
           "buildOptimizer": false,
