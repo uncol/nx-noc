@@ -1269,22 +1269,17 @@
     "@cds/city" "^1.1.0"
     modern-normalize "1.1.0"
 
-"@clr/angular@^13.10.2":
-  version "13.10.2"
-  resolved "https://registry.npmjs.org/@clr/angular/-/angular-13.10.2.tgz"
-  integrity sha512-HKDFbxnqEHStXPRwBvdYxYcf0hkqboPgk1XuK5u9hDWIglHnquVIopYE+NJ1xY1tzpbB9KwpYtvyiyITMjR9zw==
+"@clr/angular@^15.0.0-beta.2":
+  version "15.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-15.0.0-beta.2.tgz#f58011f647ccfb7d5f817e9dc5da2943b473941c"
+  integrity sha512-yzL1cEqUX9LlHzV+O9132AJKqWuUVv8+Y8FaQmPlzb66g2Tua67jYO7ZK0LesBpUWEHy5i30sWMiUbPuOzLnIQ==
   dependencies:
     tslib "^2.3.0"
 
-"@clr/icons@^13.0.2":
-  version "13.0.2"
-  resolved "https://registry.npmjs.org/@clr/icons/-/icons-13.0.2.tgz"
-  integrity sha512-bdcSuFvQAbIIp8Q2Fm55BjHW5cawP4xEOkZf2IEIin0d9ViRcAJNjACBCOMDhx2up7nPZsXwN2gL8zJhL7TSZQ==
-
-"@clr/ui@^13.10.2":
-  version "13.10.2"
-  resolved "https://registry.npmjs.org/@clr/ui/-/ui-13.10.2.tgz"
-  integrity sha512-TEFm4k5xUfmU+QM2gxwWw6b7emJnRJKwtNoxt3SQOi/5kMKcF8EwkLSkBC1196ZFJsnA6AtjMVkvyW0o6JirFw==
+"@clr/ui@15.0.0-beta.2":
+  version "15.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-15.0.0-beta.2.tgz#685f37f14e91facd0ddac020aac7bb8f2e4a9def"
+  integrity sha512-TTVPlBvXp2d1F0Lm+g6wHk5uXz3id/L4dykgnYn3Mi1kSnOMUK8kgJisvcVrTvkKv+0BgqawBUHAy23VdKPqjA==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
