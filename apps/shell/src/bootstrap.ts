@@ -6,7 +6,8 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
-import { endpoints, runInitEffect } from '@global-variable';
+import { runInitEffect, updatePrefersColorScheme } from '@global-util';
+import { endpoints } from '@global-variable';
 import { provideEffects } from '@ngrx/effects';
 import { Store, provideStore } from '@ngrx/store';
 
@@ -44,3 +45,5 @@ bootstrapApplication(AppComponent, {
     extModules,
   ],
 }).catch((err) => console.error(err));
+
+updatePrefersColorScheme();

@@ -14,7 +14,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { Credentials } from '@auth-domain';
-import { ClrInputModule, ClrPasswordModule } from '@clr/angular';
+import {
+  CdsButtonModule,
+  CdsFormsModule,
+  CdsInputModule,
+  CdsPasswordModule,
+} from '@cds/angular';
 import { AppError } from '@error-util';
 import { ControlsOf } from '@form-util';
 
@@ -24,8 +29,10 @@ import { ControlsOf } from '@form-util';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ClrInputModule,
-    ClrPasswordModule,
+    CdsFormsModule,
+    CdsInputModule,
+    CdsButtonModule,
+    CdsPasswordModule,
   ],
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
@@ -33,13 +40,18 @@ import { ControlsOf } from '@form-util';
 export class LoginFormComponent {
   @Input() errorMessage: AppError = null;
   @Input() loggedIn: boolean | null = null;
+
   @Input()
   set pending(isPending: boolean) {
     isPending ? this.form.disable() : this.form.enable();
   }
-  @Output() submitted = new EventEmitter<Credentials>();
+
+  @ViewChild('passwordInput')
+  passwordInput!: ElementRef<HTMLInputElement>;
+  @Output()
+  submitted = new EventEmitter<Credentials>();
   @Output() logout = new EventEmitter();
-  @ViewChild('logoutConfirmation') dialog!: ElementRef<HTMLDialogElement>;
+  // @ViewChild('logoutConfirmation') dialog!: ElementRef<HTMLDialogElement>;
 
   form = new FormGroup<ControlsOf<Credentials>>({
     username: new FormControl('', {
@@ -60,7 +72,22 @@ export class LoginFormComponent {
   }
 
   logOut() {
-    this.dialog.nativeElement.close();
+    // this.dialog.nativeElement.close();
     this.logout.emit();
+  }
+
+  workaroundSubmit() {
+    if (this.form.valid) {
+      this.submitted.emit(this.form.value);
+    }
+  }
+  workaroundAutofill() {
+    const matches =
+      this.passwordInput.nativeElement.matches(':-webkit-autofill') ||
+      this.passwordInput.nativeElement.matches(':autofill');
+    console.log('workaround autoFill', matches);
+    if (matches && this.form.valid) {
+      this.submitted.emit(this.form.value);
+    }
   }
 }

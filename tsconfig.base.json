@@ -23,6 +23,7 @@
       "@error-util": ["libs/shared/util-error/src/index.ts"],
       "@form-util": ["libs/shared/util-form/src/index.ts"],
       "@global-variable": ["libs/shared/util-variable/src/index.ts"],
+      "@global-util": ["libs/shared/util-global/src/index.ts"],
       "@util-data": ["libs/shared/util-data/src/index.ts"]
     }
   },

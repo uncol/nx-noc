@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Component({
   standalone: true,
   imports: [RouterModule, AsyncPipe],
-  selector: 'nx-noc-root',
+  selector: 'noc-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -1252,6 +1252,14 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@cds/angular@^6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@cds/angular/-/angular-6.2.3.tgz#e5747b49d65659fdb135f863ab48264291b9e5ee"
+  integrity sha512-c//Tk8T1mu25QKsDYNBPsVlMQdPCi+y1nm8ja8jLirvX2wVuca3gSYMZnTa1HmirzK0bW3+OSMUP3a5O26D8oA==
+  dependencies:
+    jsdom "^16.5.3"
+    tslib "^2.0.0"
+
 "@cds/city@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@cds/city/-/city-1.1.0.tgz"
@@ -1268,18 +1276,6 @@
   optionalDependencies:
     "@cds/city" "^1.1.0"
     modern-normalize "1.1.0"
-
-"@clr/angular@^15.0.0-beta.2":
-  version "15.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-15.0.0-beta.2.tgz#f58011f647ccfb7d5f817e9dc5da2943b473941c"
-  integrity sha512-yzL1cEqUX9LlHzV+O9132AJKqWuUVv8+Y8FaQmPlzb66g2Tua67jYO7ZK0LesBpUWEHy5i30sWMiUbPuOzLnIQ==
-  dependencies:
-    tslib "^2.3.0"
-
-"@clr/ui@15.0.0-beta.2":
-  version "15.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-15.0.0-beta.2.tgz#685f37f14e91facd0ddac020aac7bb8f2e4a9def"
-  integrity sha512-TTVPlBvXp2d1F0Lm+g6wHk5uXz3id/L4dykgnYn3Mi1kSnOMUK8kgJisvcVrTvkKv+0BgqawBUHAy23VdKPqjA==
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -7353,7 +7349,7 @@ jsdom@20.0.2:
     ws "^8.9.0"
     xml-name-validator "^4.0.0"
 
-jsdom@^16.4.0:
+jsdom@^16.4.0, jsdom@^16.5.3:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-16.7.0.tgz#918ae71965424b197c819f8183a754e18977b710"
   integrity sha512-u9Smc2G1USStM+s/x1ru5Sxrl6mPYCbByG1U/hUmqaVsm4tbNyS7CicOSRyuGQYZhTu0h84qkZZQ/I+dzizSVw==
@@ -8189,7 +8185,7 @@ mkdirp@^1.0.3, mkdirp@^1.0.4, mkdirp@~1.0.4:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-modern-normalize@1.1.0:
+modern-normalize@1.1.0, modern-normalize@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/modern-normalize/-/modern-normalize-1.1.0.tgz"
   integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==

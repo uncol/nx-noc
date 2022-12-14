@@ -4,6 +4,11 @@
       "id": 1,
       "username": "uncol",
       "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "Password123"
     }
   ],
   "alarms": [

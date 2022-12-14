@@ -1,35 +1,43 @@
-<div class="login-wrapper" *ngIf="!loggedIn">
+<div class="login-wrapper" *ngIf="!loggedIn else logout">
   <form class="login" [formGroup]="form" (ngSubmit)="submit()">
     <section class="title">
       <h3 class="welcome">Welcome to</h3>
       Company Product Name
       <h5 class="hint">Use your Company ID to sign in or create one now</h5>
     </section>
-    <div class="login-group">
-      <clr-input-container>
-        <label class="clr-sr-only">Username</label>
+    <cds-form-group cds-layout="horizontal gap:sm">
+      <cds-input (keyup.enter)="workaroundSubmit()">
+        <label>Username</label>
         <input
           type="text"
           name="username"
-          clrInput
           placeholder="Username"
           formControlName="username"
         />
-      </clr-input-container>
-      <clr-password-container>
-        <label class="clr-sr-only">Password</label>
+      </cds-input>
+      <cds-password (keyup.enter)="workaroundSubmit()">
+        <label>Password</label>
         <input
+          #passwordInput
           type="password"
           name="password"
-          clrPassword
           placeholder="Password"
           formControlName="password"
+          (blur)="workaroundAutofill()"
         />
-      </clr-password-container>
+      </cds-password>
+    </cds-form-group>
+    <cds-button type="submit" [disabled]="!form.valid">Login</cds-button>
       <div class="error active" *ngIf="errorMessage">
         {{ errorMessage.message }}
       </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-    </div>
   </form>
 </div>
+<ng-template #logout>
+  <div cds-layout="horizontal gap:sm">
+    <cds-button (click)="logOut()">Logout</cds-button>
+    <cds-button action="outline">outline</cds-button>
+    <cds-button action="flat">flat</cds-button>
+    <cds-button action="flat-inline">flat-inline</cds-button>
+  </div>
+</ng-template>

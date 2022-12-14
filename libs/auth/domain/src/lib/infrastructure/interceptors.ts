@@ -100,7 +100,12 @@ export const authErrorInterceptor: HttpInterceptorFn = (
           loginFacade.loginRedirect();
         }
       }
-      return throwError(() => new Error('redirect to login'));
+      return throwError(
+        () =>
+          new Error(
+            response.error ? response.error.message : response.statusMessage
+          )
+      );
     })
   );
 };
