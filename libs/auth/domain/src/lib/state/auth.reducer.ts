@@ -49,7 +49,7 @@ export const reducer = createReducer(
     AuthActions.savePath,
     (state, { path }): State => ({
       ...state,
-      path,
+      path: path !== 'login' ? path : '',
     })
   ),
   on(AuthActions.cleanSavedPath, (state): State => ({ ...state, path: '/' })),

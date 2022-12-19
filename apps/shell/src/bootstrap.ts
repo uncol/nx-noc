@@ -3,6 +3,7 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   provideRouter,
+  withDebugTracing,
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
@@ -28,8 +29,13 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom([BrowserModule, BrowserAnimationsModule]),
     provideAuthDomain(),
     endpoints,
+    extModules,
     MANIFEST_INIT,
-    provideRouter(SHELL_ROUTES, withEnabledBlockingInitialNavigation()),
+    provideRouter(
+      SHELL_ROUTES,
+      withEnabledBlockingInitialNavigation(),
+      withDebugTracing()
+    ),
     provideStore(ROOT_REDUCERS, {
       metaReducers: metaReducers,
       runtimeChecks: {
@@ -42,7 +48,6 @@ bootstrapApplication(AppComponent, {
       },
     }),
     provideEffects([AppEffects]),
-    extModules,
   ],
 }).catch((err) => console.error(err));
 

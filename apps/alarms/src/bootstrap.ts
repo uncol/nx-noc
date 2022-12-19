@@ -6,6 +6,7 @@ import {
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
 import { LoginPageComponent } from '@auth-feature-login';
+import { updatePrefersColorScheme } from '@global-util';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app/app.component';
@@ -29,3 +30,5 @@ bootstrapApplication(AppComponent, {
     provideStoreDevtools(),
   ],
 }).catch((err) => console.error(err));
+
+updatePrefersColorScheme();

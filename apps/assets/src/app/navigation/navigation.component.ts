@@ -3,13 +3,14 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'assets-home',
+  selector: 'assets-nav',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HomeComponent {
-  // assetsUsers = ['home', { outlets: { assets: ['users'] } }];
+export class NavigationComponent {
+  usersLink = ['', { outlets: { assets: ['users'] } }];
+  homeLink = ['', { outlets: { assets: ['home'] } }];
 }

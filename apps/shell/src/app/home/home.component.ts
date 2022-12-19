@@ -1,12 +1,55 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { CdsButtonModule, CdsModalModule } from '@cds/angular';
+import { first, Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'noc-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterLink,
+    CdsModalModule,
+    CdsButtonModule,
+    RouterOutlet,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class HomeComponent {}
+export class HomeComponent implements OnDestroy {
+  hidden = true;
+  sub!: Subscription;
+  alarmsList = ['/home', { outlets: { main: ['alarms'] } }];
+  assetsHome = ['/home', { outlets: { main: ['assets'] } }];
+  assetsUsers = [
+    '/home',
+    { outlets: [{ main: ['assets'] }, { assets: ['users'] }] },
+  ];
+
+  constructor(private router: Router) {}
+
+  start() {
+    this.hidden = !this.hidden;
+
+    if (this.sub) {
+      // this.sub.unsubscribe();
+    }
+    this.sub = timer(10000, 2000)
+      .pipe(first())
+      .subscribe((value) => {
+        console.log(value);
+        // this.router.navigateByUrl('/login').catch(console.error);
+      });
+    // setTimeout(() => {
+    //   this.router.navigateByUrl('/login');
+    // }, 5000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.sub) {
+      // this.sub.unsubscribe();
+    }
+  }
+}

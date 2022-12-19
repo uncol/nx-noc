@@ -81,13 +81,20 @@ export class LoginFormComponent {
       this.submitted.emit(this.form.value);
     }
   }
+
   workaroundAutofill() {
-    const matches =
-      this.passwordInput.nativeElement.matches(':-webkit-autofill') ||
-      this.passwordInput.nativeElement.matches(':autofill');
-    console.log('workaround autoFill', matches);
-    if (matches && this.form.valid) {
-      this.submitted.emit(this.form.value);
+    const inputPasswordElement = this.passwordInput.nativeElement;
+    console.log(inputPasswordElement);
+    try {
+      const matches =
+        inputPasswordElement.matches(':-webkit-autofill') ||
+        inputPasswordElement.matches(':autofill');
+      console.log('workaround autoFill', matches);
+      if (matches && this.form.valid) {
+        this.submitted.emit(this.form.value);
+      }
+    } catch (e) {
+      console.log(e);
     }
   }
 }

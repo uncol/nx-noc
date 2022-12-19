@@ -1,1 +1,26 @@
-<p>Shell home works!</p>
+<ul>
+  <li><a routerLink="/">home</a></li>
+  <li><a routerLink="/login1">login</a></li>
+  <li><a [routerLink]="assetsHome">assets home</a></li>
+<!--  <li><a [routerLink]="assetsUsers">assets users</a></li>-->
+  <li><a [routerLink]="alarmsList">alarms home</a></li>
+</ul>
+
+<a routerLink="/login">Logout</a>
+<cds-button (click)="start()">Open Modal</cds-button>
+<cds-modal [hidden]="hidden">
+  <cds-modal-header>
+    <h3 cds-text="title">I have a nice title</h3>
+  </cds-modal-header>
+  <cds-modal-header-actions>
+    <cds-button>Do something in the header</cds-button>
+  </cds-modal-header-actions>
+  <cds-modal-content>
+    <p cds-text="body">But not much to say...</p>
+  </cds-modal-content>
+  <cds-modal-actions>
+    <cds-button action="outline" (click)="hidden = !hidden">Cancel</cds-button>
+    <cds-button>Ok</cds-button>
+  </cds-modal-actions>
+</cds-modal>
+<router-outlet name="main"></router-outlet>

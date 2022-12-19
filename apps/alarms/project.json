@@ -24,7 +24,6 @@
           "apps/alarms/src/assets"
         ],
         "styles": [
-          "node_modules/@clr/ui/clr-ui.min.css",
           "apps/alarms/src/styles.scss"
         ],
         "scripts": [],

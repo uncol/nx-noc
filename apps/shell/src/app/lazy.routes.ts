@@ -2,7 +2,9 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { loggedInGuard } from '@auth-domain';
 
+import { HomeComponent } from './home/home.component';
 import { NOCManifest } from './model';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SHELL_ROUTES } from './routes';
 
 export function buildRoutes(options: NOCManifest): Routes {
@@ -10,7 +12,8 @@ export function buildRoutes(options: NOCManifest): Routes {
     const entry = options[key];
     return {
       path: entry.routePath,
-      canActivate: [loggedInGuard],
+      canLoad: [loggedInGuard],
+      outlet: 'main',
       loadChildren: () =>
         loadRemoteModule({
           type: 'module',
@@ -19,6 +22,29 @@ export function buildRoutes(options: NOCManifest): Routes {
         }),
     };
   });
-
-  return [...SHELL_ROUTES, ...lazyRoutes];
+  lazyRoutes.push({
+    path: '**',
+    outlet: 'main',
+    component: PageNotFoundComponent,
+  });
+  console.log([
+    {
+      path: 'home',
+      title: 'Shell - Home',
+      canActivate: [loggedInGuard],
+      component: HomeComponent,
+      children: lazyRoutes,
+    },
+    ...SHELL_ROUTES,
+  ]);
+  return [
+    {
+      path: 'home',
+      title: 'Shell - Home',
+      canActivate: [loggedInGuard],
+      component: HomeComponent,
+      children: lazyRoutes,
+    },
+    ...SHELL_ROUTES,
+  ];
 }

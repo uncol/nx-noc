@@ -1,19 +1,18 @@
 import { Route } from '@angular/router';
-import { loggedInGuard } from '@auth-domain';
 import { LoginPageComponent } from '@auth-feature-login';
 
-import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const SHELL_ROUTES: Route[] = [
-  {
-    path: '',
-    title: 'Shell - Home',
-    canActivate: [loggedInGuard],
-    component: HomeComponent,
-  },
   {
     path: 'login',
     title: 'Auth - Login',
     component: LoginPageComponent,
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  // { path: '**', component: PageNotFoundComponent },
 ];
