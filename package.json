@@ -6,7 +6,10 @@
     "start:shell": "nx serve shell --proxy-config=apps/shell/proxy-local.conf.json",
     "start:alarms": "nx serve alarms --proxy-config=apps/shell/proxy-local.conf.json",
     "start:assets": "nx serve assets --proxy-config=apps/shell/proxy-local.conf.json",
-    "build": "nx build",
+    "build:shell": "nx build shell --configuration=production",
+    "build:assets": "nx build assets --configuration=production",
+    "build:alarms": "nx build alarms --configuration=production",
+    "build:fake-api": "nx build fake-api --configuration=production",
     "test": "nx test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "lint:all": "nx run-many --target=lint --all"

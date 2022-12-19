@@ -7,7 +7,7 @@ import { endpoints } from '@global-variable';
 import { provideStore } from '@ngrx/store';
 
 import { AppComponent } from './app/app.component';
-import ROUTES from './app/routes';
+import ROUTES from './app/routes.local';
 
 bootstrapApplication(AppComponent, {
   providers: [

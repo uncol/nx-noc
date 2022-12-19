@@ -27,10 +27,6 @@ export const MANIFEST_INIT = runInitEffect((store: Store) => {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom([BrowserModule, BrowserAnimationsModule]),
-    provideAuthDomain(),
-    endpoints,
-    extModules,
-    MANIFEST_INIT,
     provideRouter(
       SHELL_ROUTES,
       withEnabledBlockingInitialNavigation(),
@@ -48,6 +44,10 @@ bootstrapApplication(AppComponent, {
       },
     }),
     provideEffects([AppEffects]),
+    provideAuthDomain(),
+    endpoints,
+    extModules,
+    MANIFEST_INIT,
   ],
 }).catch((err) => console.error(err));
 

@@ -2,6 +2,7 @@
 <ul>
   <li><a routerLink="home">Home</a></li>
   <li><a routerLink="users">Users</a></li>
-  <li><a routerLink="/login">Logout</a></li>
+  <li><a [routerLink]="['/login', { outlets: { main: null }}]">Assets Logout main: null</a></li>
+  <li><a routerLink="/login">Assets Logout</a></li>
 </ul>
 <router-outlet></router-outlet>
