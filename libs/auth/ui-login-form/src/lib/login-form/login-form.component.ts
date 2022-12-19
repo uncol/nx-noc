@@ -17,6 +17,7 @@ import { Credentials } from '@auth-domain';
 import {
   CdsButtonModule,
   CdsFormsModule,
+  CdsIconModule,
   CdsInputModule,
   CdsPasswordModule,
 } from '@cds/angular';
@@ -33,6 +34,7 @@ import { ControlsOf } from '@form-util';
     CdsInputModule,
     CdsButtonModule,
     CdsPasswordModule,
+    CdsIconModule,
   ],
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],

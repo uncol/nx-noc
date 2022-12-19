@@ -7,7 +7,12 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { provideAuthDomain } from '@auth-domain';
-import { runInitEffect, updatePrefersColorScheme } from '@global-util';
+import {
+  loadIcons,
+  runInitAction,
+  runInitEffect,
+  updatePrefersColorScheme,
+} from '@global-util';
 import { endpoints } from '@global-variable';
 import { provideEffects } from '@ngrx/effects';
 import { Store, provideStore } from '@ngrx/store';
@@ -23,6 +28,10 @@ export const MANIFEST_INIT = runInitEffect((store: Store) => {
   return () => {
     store.dispatch(AppActions.loadManifest());
   };
+});
+
+export const LOAD_ICONS_ACTION = runInitAction(() => {
+  return loadIcons;
 });
 bootstrapApplication(AppComponent, {
   providers: [
@@ -48,6 +57,7 @@ bootstrapApplication(AppComponent, {
     endpoints,
     extModules,
     MANIFEST_INIT,
+    LOAD_ICONS_ACTION,
   ],
 }).catch((err) => console.error(err));
 

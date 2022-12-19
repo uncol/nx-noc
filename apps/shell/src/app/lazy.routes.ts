@@ -1,10 +1,10 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { loggedInGuard } from '@auth-domain';
+import { PageNotFoundComponent } from '@page-not-found';
 
 import { HomeComponent } from './home/home.component';
 import { NOCManifest } from './model';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SHELL_ROUTES } from './routes';
 
 export function buildRoutes(options: NOCManifest): Routes {

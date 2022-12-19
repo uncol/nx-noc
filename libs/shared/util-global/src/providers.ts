@@ -9,3 +9,11 @@ export function runInitEffect(fn: (store: Store) => void): Provider {
     deps: [Store],
   };
 }
+
+export function runInitAction(fn: () => void): Provider {
+  return {
+    multi: true,
+    provide: APP_INITIALIZER,
+    useFactory: fn,
+  };
+}
