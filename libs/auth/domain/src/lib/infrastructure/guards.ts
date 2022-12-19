@@ -1,20 +1,11 @@
 import { inject } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanLoadFn,
-  Route,
-  Router,
-  UrlSegment,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
 import { skipWhile } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { LoginFacade } from '../application';
 
-export const loggedInGuard: CanLoadFn = (
-  route: Route,
-  segments: UrlSegment[]
-) => {
+export const loggedInGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const loginFacade = inject(LoginFacade);
   const router = inject(Router);
 
@@ -23,7 +14,7 @@ export const loggedInGuard: CanLoadFn = (
       // wait refresh tokens when restore by url
       return (
         !isLogged &&
-        // route.url[0]?.path !== 'login' &&
+        route.url[0]?.path !== 'login' &&
         router.getCurrentNavigation()?.id === 1
       );
     }),

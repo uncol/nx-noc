@@ -12,7 +12,7 @@ export function buildRoutes(options: NOCManifest): Routes {
     const entry = options[key];
     return {
       path: entry.routePath,
-      canLoad: [loggedInGuard],
+      canActivate: [loggedInGuard],
       outlet: 'main',
       loadChildren: () =>
         loadRemoteModule({
@@ -29,7 +29,7 @@ export function buildRoutes(options: NOCManifest): Routes {
   });
   console.log([
     {
-      path: 'home',
+      path: '',
       title: 'Shell - Home',
       canActivate: [loggedInGuard],
       component: HomeComponent,
@@ -39,7 +39,7 @@ export function buildRoutes(options: NOCManifest): Routes {
   ]);
   return [
     {
-      path: 'home',
+      path: '',
       title: 'Shell - Home',
       canActivate: [loggedInGuard],
       component: HomeComponent,

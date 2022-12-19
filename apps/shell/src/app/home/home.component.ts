@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CdsButtonModule, CdsModalModule } from '@cds/angular';
-import { first, Subscription, timer } from 'rxjs';
+import { Subscription, first, timer } from 'rxjs';
 
 @Component({
   selector: 'noc-home',
@@ -21,14 +21,12 @@ import { first, Subscription, timer } from 'rxjs';
 export class HomeComponent implements OnDestroy {
   hidden = true;
   sub!: Subscription;
-  alarmsList = ['/home', { outlets: { main: ['alarms'] } }];
-  assetsHome = ['/home', { outlets: { main: ['assets'] } }];
+  alarmsList = ['/', { outlets: { main: ['alarms'] } }];
+  assetsHome = ['/', { outlets: { main: ['assets'] } }];
   assetsUsers = [
     '/home',
     { outlets: [{ main: ['assets'] }, { assets: ['users'] }] },
   ];
-
-  constructor(private router: Router) {}
 
   start() {
     this.hidden = !this.hidden;
