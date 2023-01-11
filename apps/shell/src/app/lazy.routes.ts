@@ -1,7 +1,7 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
 import { loggedInGuard } from '@auth-domain';
-import { PageNotFoundComponent } from '@page-not-found';
+import { PageNotFoundComponent } from '@noc-pages';
 
 import { HomeComponent } from './home/home.component';
 import { NOCManifest } from './model';

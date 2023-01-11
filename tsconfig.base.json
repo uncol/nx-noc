@@ -10,23 +10,54 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@alarm-list": ["libs/alarms/feature-list/src/index.ts"],
-      "@alarms-domain": ["libs/alarms/domain/src/index.ts"],
-      "@auth-domain": ["libs/auth/domain/src/index.ts"],
-      "@auth-feature-login": ["libs/auth/feature-login/src/index.ts"],
-      "@auth-login-form": ["libs/auth/ui-login-form/src/index.ts"],
-      "@error-util": ["libs/shared/util-error/src/index.ts"],
-      "@form-util": ["libs/shared/util-form/src/index.ts"],
-      "@global-util": ["libs/shared/util-global/src/index.ts"],
-      "@global-variable": ["libs/shared/util-variable/src/index.ts"],
-      "@page-not-found": ["libs/shared/ui-page-not-found/src/index.ts"],
-      "@util-data": ["libs/shared/util-data/src/index.ts"]
+      "@alarm-list": [
+        "libs/alarms/feature-list/src/index.ts"
+      ],
+      "@alarms-domain": [
+        "libs/alarms/domain/src/index.ts"
+      ],
+      "@auth-domain": [
+        "libs/auth/domain/src/index.ts"
+      ],
+      "@auth-feature-login": [
+        "libs/auth/feature-login/src/index.ts"
+      ],
+      "@auth-login-form": [
+        "libs/auth/ui-login-form/src/index.ts"
+      ],
+      "@error-util": [
+        "libs/shared/util-error/src/index.ts"
+      ],
+      "@form-util": [
+        "libs/shared/util-form/src/index.ts"
+      ],
+      "@global-util": [
+        "libs/shared/util-global/src/index.ts"
+      ],
+      "@global-variable": [
+        "libs/shared/util-variable/src/index.ts"
+      ],
+      "@noc-pages": [
+        "libs/shared/ui-pages/src/index.ts"
+      ],
+      "@noc-ui": [
+        "libs/shared/ui-components/src/index.ts"
+      ],
+      "@util-data": [
+        "libs/shared/util-data/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

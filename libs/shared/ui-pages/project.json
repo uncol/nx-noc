@@ -1,15 +1,15 @@
 {
-  "name": "shared-ui-page-not-found",
+  "name": "shared-ui-pages",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/shared/ui-page-not-found/src",
-  "prefix": "page-not-found",
+  "sourceRoot": "libs/shared/ui-pages/src",
+  "prefix": "pages",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/ui-page-not-found/jest.config.ts",
+        "jestConfig": "libs/shared/ui-pages/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -18,8 +18,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/shared/ui-page-not-found/**/*.ts",
-          "libs/shared/ui-page-not-found/**/*.html"
+          "libs/shared/ui-pages/**/*.ts",
+          "libs/shared/ui-pages/**/*.html"
         ]
       }
     }
